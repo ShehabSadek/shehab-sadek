@@ -12,27 +12,37 @@ import Link from "next/link"
 import { StaticImport, PlaceholderValue, OnLoadingComplete } from "next/dist/shared/lib/get-img-props"
 
 export function AppBar() {
-  const { theme, setTheme } = useTheme()
-const SwitchTheme=()=>{
-    if(theme==="dark"){
-        setTheme("light")
-    }else{
-        setTheme("dark")
-    }
-}
-function Logo(props: React.JSX.IntrinsicAttributes & Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "height" | "width" | "loading" | "ref" | "alt" | "src" | "srcSet"> & { src: string | StaticImport; alt: string; width?: number | `${number}` | undefined; height?: number | `${number}` | undefined; fill?: boolean | undefined; loader?: ImageLoader | undefined; quality?: number | `${number}` | undefined; priority?: boolean | undefined; loading?: "eager" | "lazy" | undefined; placeholder?: PlaceholderValue | undefined; blurDataURL?: string | undefined; unoptimized?: boolean | undefined; overrideSrc?: string | undefined; onLoadingComplete?: OnLoadingComplete | undefined; layout?: string | undefined; objectFit?: string | undefined; objectPosition?: string | undefined; lazyBoundary?: string | undefined; lazyRoot?: string | undefined } & React.RefAttributes<HTMLImageElement | null>){
-  if(theme==="dark"){
-    return (<Image  {...props} src={"/logo_white.png"} alt="Logo"/>)
-  }else{
-    return (<Image  {...props} src={"/logo.png"} alt="Logo"/>)
-  }
+const { theme, setTheme } = useTheme()
+const [mounted, setMounted] = React.useState(false);
 
+React.useEffect(() => {
+  setMounted(true);
+}, [])
+
+const SwitchTheme = () => {
+  setTheme(theme === "dark" ? "light" : "dark");
+};
+
+function Logo(props: React.ComponentProps<typeof Image>) {
+  if (!mounted) {
+    return <Image {...props} src={"/logo.png"} alt="Logo" />;
+  }
+  return (
+    <Image
+      {...props}
+      src={theme === "dark" ? "/logo_white.png" : "/logo.png"}
+      alt="Logo"
+    />
+  );
+}
+const loaderProp =({ src }:{ src:any }) => {
+  return src;
 }
   return (
     <div className="flex items-center justify-between px-4 py-2">
       <Link href="#" className="flex items-center gap-2" prefetch={false}>
-        <Logo className="h-100 w-100" width={"150"} height={"150"}src={""} alt={""} />
-        <span className="text-lg font-semibold">Shehab Sadek</span>
+        <Logo width={"150"} height={"150"} src={""} alt={""} blurDataURL="data:..." placeholder="blur" unoptimized={true} loader={loaderProp}/>
+        <h1 className="text-lg font-bold">Shehab Sadek</h1>
       </Link>
 
       <div className="hidden md:flex gap-4">
@@ -81,7 +91,7 @@ function Logo(props: React.JSX.IntrinsicAttributes & Omit<React.DetailedHTMLProp
       </div>
   )
 }
-function MenuIcon(props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+function MenuIcon(props: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
       {...props}
