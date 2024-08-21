@@ -9,7 +9,6 @@ import Image, { ImageLoader } from 'next/image'
 import { Button } from "@/components/ui/button"
 
 import Link from "next/link"
-import { StaticImport, PlaceholderValue, OnLoadingComplete } from "next/dist/shared/lib/get-img-props"
 
 export function AppBar() {
 const { theme, setTheme } = useTheme()
@@ -111,48 +110,3 @@ function MenuIcon(props: React.SVGAttributes<SVGSVGElement>) {
     </svg>
   )
 }
-
-
-
-      {/* <NavigationMenu>
-        <NavigationMenuList>
-          
-        <NavigationMenuItem>
-          <Link href="#about" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              About Me
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-
-          <NavigationMenuItem>
-          <Link href="#skills" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Skills
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-
-          <NavigationMenuItem>
-          <Link href="#experience" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Experience
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <Link href="#contact" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-
-          <NavigationMenuItem>  
-
-           </NavigationMenuItem>
-
-        </NavigationMenuList>
-    </NavigationMenu>
-  </div> */}
