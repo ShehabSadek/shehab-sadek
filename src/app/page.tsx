@@ -100,7 +100,7 @@ export default function Home(): ReactElement {
               key={categoryIndex}
             >
               <h2 className="text-xl font-bold mb-4">
-                {category.charAt(0).toUpperCase() + category.slice(1)} Development
+                {category.charAt(0).toUpperCase() + category.slice(1)}
               </h2>
               <ul className="flex flex-wrap justify-center gap-4">
                 {data.skills[category].map(

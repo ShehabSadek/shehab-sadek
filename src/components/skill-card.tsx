@@ -1,39 +1,46 @@
-import React from 'react'
-import Image from "next/image";
-import { Skeleton } from "@/components/ui/skeleton"
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { useTheme } from 'next-themes';
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
-  
-const SkillCard = ({skill}:{skill:{name:string, image:string}}) => {
+const SkillCard = ({ skill }: { skill: { name: string; image: string } }) => {
+  const { theme } = useTheme();
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    let src;
+    try {
+      if (theme === 'light') {
+        src = require(`@/images/skills${skill.image}-light.svg`).default;
+      } else {
+        src = require(`@/images/skills${skill.image}.svg`).default;
+      }
+    } catch (error) {
+      src = require(`@/images/skills${skill.image}.svg`).default;
+    }
+    setImageSrc(src);
+  }, [theme, skill.image]);
+
   return (
-    <Card className='w-44 h-44 p-2 justify-center items-center dark:bg-slate-800'>
-    <CardContent className='p-0'>
-    {skill.image ? (
-        <Image
-        src={require(`@/images/skills${skill.image}`).default}
-        alt={skill.name}
-        className=" h-20 mb-2 object-fit-contain "
-        loading="lazy"
-        />
-    ) : (
-        <Skeleton
-        className="w-20 h-24 mb-2"
-        style={{ borderRadius: "50%" }}
-    />                      )}
-    {/* <span>{skill.name}</span> */}
-    </CardContent>
-    <CardFooter>
+    <Card className="w-44 h-44 p-2 bg-slate-100 dark:bg-slate-800 shadow-inner">
+      <CardContent className="p-0 flex justify-center content-center">
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt={skill.name}
+            className="h-20 w-auto mb-2 object-contain"
+            loading="lazy"
+          />
+        ) : (
+          <Skeleton className="w-20 h-24 mb-2" style={{ borderRadius: '50%' }} />
+        )}
+      </CardContent>
+      <CardFooter className="mt-6 justify-center content-center">
         <p>{skill.name}</p>
-    </CardFooter>
+      </CardFooter>
     </Card>
-  )
-}
+  );
+};
 
-export default SkillCard
+export default SkillCard;
