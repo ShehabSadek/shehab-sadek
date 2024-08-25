@@ -43,7 +43,7 @@ const loaderProp =({ src }:{ src:any }) => {
   return src;
 }
   return (
-    <div className="flex items-center justify-between px-4 py-2">
+    <div className="flex-no-wrap fixed top-0 z-5 flex w-full items-center justify-between px-4 py-2">
       <div>
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
           <Logo width={"150"} height={"150"} src={""} alt={""} blurDataURL="data:..." placeholder="blur" unoptimized={true} loader={loaderProp}/>
@@ -100,10 +100,6 @@ const loaderProp =({ src }:{ src:any }) => {
             <Link href="#" className="text-lg font-medium hover:underline underline-offset-4" prefetch={false}>
             Contact
             </Link>
-            <Button variant="outline" size="icon" onClick={SwitchTheme}>
-                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            </Button>
           </div>
         </SheetContent>
       </Sheet>

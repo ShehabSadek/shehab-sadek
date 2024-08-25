@@ -1,0 +1,62 @@
+{
+    "skills": {
+      "web": [
+        { "name": "CSS3", "image": "/css.svg" },
+        { "name": "HTML5", "image": "/html.svg" },
+        { "name": "JavaScript", "image": "/JS.svg" },
+        { "name": "TypeScript", "image": "/TypeScript.svg" },
+        { "name": "PHP", "image": "/PHP.svg" },
+        { "name": "Firebase", "image": "/firebase.svg" },
+        { "name": "Cloudflare", "image": "/cloudflare.svg" },
+        { "name": "Vercel", "image": "/vercel.svg" },
+        { "name": "Next JS", "image": "/nextjs.svg" },
+        { "name": "NodeJS", "image": "/nodejs.svg" },
+        { "name": "React", "image": "/react.svg" },
+        { "name": "React Router", "image": "/react-router.svg" },
+        { "name": "SASS", "image": "/sass.svg" },
+        { "name": "TailwindCSS", "image": "/tailwind.svg" },
+        { "name": "Laravel", "image": "/laravel.svg" }
+      ],
+      "frontend": [
+        { "name": "Dart", "image": "/Dart.svg" },
+        { "name": "Flutter", "image": "/flutter.svg" }
+            ],
+      "desktop": [
+        { "name": "C++", "image": "/cpp.svg" },
+        { "name":"Python","image":"/Python.svg"},
+        { "name": "Qt", "image": "/qt.svg" },
+        { "name": "Java", "image": "/Java.svg" }
+      ],
+      "backend": [
+        { "name": "Firebase", "image": "/firebase.svg" },
+        { "name": "MySQL", "image": "/mysql.svg" },
+        { "name": "MariaDB", "image": "/mariadb.svg" }
+      ],
+      "machine learning": [
+        { "name": "Apache Spark", "image": "/apache-spark.svg" },
+        { "name": "Apache Hadoop", "image": "/apache-hadoop.svg" },
+        { "name": "PyTorch", "image": "/pytorch.svg" },
+        { "name": "TensorFlow", "image": "/tensorflow.svg" },
+        { "name": "scikit-learn", "image": "/scikit-learn.svg" },
+        { "name": "OpenCV", "image": "/opencv.svg" }
+      ],
+      "tools": [
+        { "name": "Git", "image": "/git.svg" },
+        { "name": "GitHub", "image": "/github.svg" },
+        { "name": "NPM", "image": "/npm.svg" }
+      ],
+      "iot": [
+        { "name": "Arduino", "image": "/arduino.svg" },
+        { "name": "Espressif", "image": "/espressif.svg" }
+      ],
+      "markup": [
+        { "name": "LaTeX", "image": "/latex.svg" },
+        { "name": "Markdown", "image": "/markdown.svg" }
+      ],
+      "game": [
+        { "name": "Unity", "image": "/unity.svg" },
+        { "name": "PyGame", "image": "/pygame.svg" }
+      ]
+    }
+  }
+  
