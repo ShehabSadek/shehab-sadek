@@ -36,8 +36,8 @@ export default function Home(): ReactElement {
     <>
       <ParticlesBackground />
       <AppBar />
-      <main className="grid lg:grid-cols-6 grid-cols-1 min-h-screen justify-between p-12 relative">
-        <section className="lg:col-start-1 lg:col-end-5 p-8 bg-slate-50/90 dark:bg-slate-700/90 border border-slate-300 dark:border-slate-600 rounded-lg relative z-10">
+      <main className="grid lg:grid-cols-6 grid-cols-1 min-h-screen justify-between p-12 mt-24  relative scroll-smooth">
+        <section className="lg:col-start-1 lg:col-end-5 p-8 bg-slate-50/90 dark:bg-slate-700/90 border border-slate-300 dark:border-slate-600 rounded-lg relative z-1">
           <div className="md:hidden absolute inset-0 z-[-1]">
             <img
               src="/shehab_miu.png"
