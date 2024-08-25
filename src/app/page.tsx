@@ -6,23 +6,14 @@ import Typewriter from "typewriter-effect";
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
 import dataJson from "@/data/data.json";
-import { ReactElement } from "react";
-import { Skeleton } from "@/components/ui/skeleton"
+import { ReactElement, useEffect } from "react";
 import SkillCard from "@/components/skill-card"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 interface Skill {
   name: string;
   image: string;
 }
-
 interface SkillsData {
   skills: {
     [category: string]: Skill[];
@@ -31,7 +22,13 @@ interface SkillsData {
 
 export default function Home(): ReactElement {
   const data: SkillsData = dataJson;
-
+  useEffect(() => {
+    AOS.init({
+      // easing: "ease-out-cubic",
+      once: false,
+      offset: 50,
+    });
+  }, [])
   return (
     <>
       <ParticlesBackground />
@@ -55,7 +52,7 @@ export default function Home(): ReactElement {
               }}
             />
           </h1>
-          <div className="text-xl">
+          <div className="text-2xl justify-between items-center">
             <p>
               As an adept computer science student with a robust proficiency in
               programming and web development, I am actively pursuing a
@@ -66,7 +63,7 @@ export default function Home(): ReactElement {
               about embracing fresh challenges and assuming increased
               responsibilities.
             </p>
-            <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+            <ul className="my-28 ml-6 list-disc [&>li]:mt-2 ">
               <li>Major: Computer Science</li>
               <li>Minor: AI</li>
               <li>University: Misr International University</li>
@@ -74,10 +71,10 @@ export default function Home(): ReactElement {
                 Proficient in: Python, JavaScript, HTML/CSS, React, Node.js
               </li>
               <li>Main stack: Full-Stack</li>
-              <li>Very intrigued by AI and its modern applications</li>
+              <li>Always open to learning new tech :)</li>
             </ul>
 
-            <blockquote className="mt-6 border-l-2 pl-6 italic">
+            <blockquote className="mt-6 border-l-2 pl-6 italic text-xl">
               "Design and programming are human activities; forget that and all
               is lost. ~Bjarne Stroustrup"
             </blockquote>
@@ -94,20 +91,22 @@ export default function Home(): ReactElement {
         </div>
 
         <section className="col-span-6 text-center mt-8">
+          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Skills</h1>
           {Object.keys(data.skills).map((category, categoryIndex) => (
             <div
               className="col-span-6 text-center mt-8"
               key={categoryIndex}
+              
             >
-              <h2 className="text-xl font-bold mb-4">
+              <h2 className="text-xl font-bold mb-4 ">
                 {category.charAt(0).toUpperCase() + category.slice(1)}
               </h2>
               <ul className="flex flex-wrap justify-center gap-4">
                 {data.skills[category].map(
                   (skill: Skill, index: number) => (
                     <Tilt>
-                    <li key={skill.name} className="flex flex-col items-center">
-                      <SkillCard skill={skill}/>
+                    <li key={skill.name} className="flex flex-col items-center"data-aos="fade-up" >
+                      <SkillCard skill={skill} />
                     </li>
                     </Tilt>
                   )
@@ -115,6 +114,9 @@ export default function Home(): ReactElement {
               </ul>
             </div>
           ))}
+        </section>
+        <section className="col-span-6 text-center mt-8">
+          EXPERIENCE (coming soon)
         </section>
       </main>
     </>
