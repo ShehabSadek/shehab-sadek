@@ -57,6 +57,30 @@
         { "name": "Unity", "image": "/unity" },
         { "name": "PyGame", "image": "/pygame" }
       ]
-    }
+    },
+    "experience": [
+      {
+        "title": "IT helpdesk engineer",
+        "subtitle": "ABC Engineering (Cairo EG)",
+        "description": [
+          "Provided hardware, software, and networking support to staff members.",
+          "Built and maintained a locally deployed internal system for data follow-ups",
+          "Currently working on building their website"
+        ],
+        "date": "Dec. 2023 - Current",
+        "icon": "https://www.ahmedmsabdelhamid.com/assets/abc.webp"
+      },
+      {
+        "title": "IT helpdesk dadasddasd",
+        "subtitle": "ABC Engineering (Cairo EG) dadadwdgaw",
+        "description": [
+          "Provided hardware, software, and networking support to staff members.",
+          "Built and maintained a locally deployed internal system for data follow-ups",
+          "Currently working on building their website"
+        ],
+        "date": "Dec. 2023 - Nov. 2021",
+        "icon": "https://www.ahmedmsabdelhamid.com/assets/abc.webp"
+      }
+    ]
   }
   

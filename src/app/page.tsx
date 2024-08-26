@@ -8,7 +8,10 @@ import Tilt from "react-parallax-tilt";
 import dataJson from "@/data/data.json";
 import { ReactElement, useEffect } from "react";
 import SkillCard from "@/components/skill-card"
+import TimelineComponent from "@/components/timeline"
+
 import AOS from "aos";
+
 import "aos/dist/aos.css";
 interface Skill {
   name: string;
@@ -34,7 +37,7 @@ export default function Home(): ReactElement {
       <ParticlesBackground />
       <AppBar />
       <main className="grid lg:grid-cols-6 grid-cols-1 min-h-screen justify-between p-12 mt-24  relative scroll-smooth">
-        <section className="lg:col-start-1 lg:col-end-5 p-8 bg-slate-50/90 dark:bg-slate-700/90 border border-slate-300 dark:border-slate-600 rounded-lg relative z-1">
+        <section id="about" className="lg:col-start-1 lg:col-end-5 p-8 bg-slate-50/90 dark:bg-slate-700/90 border border-slate-300 dark:border-slate-600 rounded-lg relative z-1">
           <div className="md:hidden absolute inset-0 z-[-1]">
             <img
               src="/shehab_miu.png"
@@ -90,7 +93,7 @@ export default function Home(): ReactElement {
           />
         </div>
 
-        <section className="col-span-6 text-center mt-8">
+        <section id="skill" className="col-span-6 text-center mt-8">
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Skills</h1>
           {Object.keys(data.skills).map((category, categoryIndex) => (
             <div
@@ -115,8 +118,9 @@ export default function Home(): ReactElement {
             </div>
           ))}
         </section>
-        <section className="col-span-6 text-center mt-8">
+        <section id="exp" className="col-span-6 text-center items-center justify-content mt-8">
           EXPERIENCE (coming soon)
+          <TimelineComponent/>
         </section>
       </main>
     </>

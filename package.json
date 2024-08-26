@@ -26,15 +26,18 @@
     "react": "^18",
     "react-dom": "^18",
     "react-parallax-tilt": "^1.7.237",
+    "react-vertical-timeline-component": "^3.6.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "vertical-timeline-component-react": "^4.4.3"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
