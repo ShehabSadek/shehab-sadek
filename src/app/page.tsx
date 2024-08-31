@@ -37,61 +37,58 @@ export default function Home(): ReactElement {
       <ParticlesBackground />
       <AppBar />
       <main className="grid lg:grid-cols-6 grid-cols-1 min-h-screen justify-between p-12 mt-24  relative scroll-smooth">
-        <section id="about" className="lg:col-start-1 lg:col-end-5 p-8 bg-slate-50/90 dark:bg-slate-700/90 border border-slate-300 dark:border-slate-600 rounded-lg relative z-1">
-          <div className="md:hidden absolute inset-0 z-[-1]">
-            <img
-              src="/shehab_miu.png"
-              alt="Background"
-              className="w-full h-full object-cover opacity-20 rounded-lg"
-              loading="lazy"
-            />
-          </div>
-          <h1 className="text-4xl font-bold text-center">
-            <Typewriter
-              options={{
-                strings: ["Shehab Sadek", "Software Developer", "AI Enthusiast"],
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </h1>
-          <div className="text-2xl justify-between items-center">
-            <p>
-              As an adept computer science student with a robust proficiency in
-              programming and web development, I am actively pursuing a
-              challenging and gratifying opportunity to advance my skills and
-              contribute substantively to a progressive organization. Possessing
-              unwavering confidence in my capacity to rapidly assimilate new
-              concepts and adapt to dynamic environments, I am enthusiastic
-              about embracing fresh challenges and assuming increased
-              responsibilities.
-            </p>
-            <ul className="my-28 ml-6 list-disc [&>li]:mt-2 ">
-              <li>Major: Computer Science</li>
-              <li>Minor: AI</li>
-              <li>University: Misr International University</li>
-              <li>
-                Proficient in: Python, JavaScript, HTML/CSS, React, Node.js
-              </li>
-              <li>Main stack: Full-Stack</li>
-              <li>Always open to learning new tech :)</li>
-            </ul>
+      <section className="lg:col-start-1 lg:col-end-7 p-8 bg-slate-50/90 dark:bg-slate-700/90 border border-slate-300 dark:border-slate-600 rounded-lg relative z-1 flex flex-col md:flex-row">
+  <div className="w-full md:w-3/4 flex flex-col justify-start items-center relative">
+    <h1 className="text-4xl font-bold text-center mb-6">
+      <Typewriter
+        options={{
+          strings: ["Shehab Sadek", "Software Developer", "AI Enthusiast"],
+          autoStart: true,
+          loop: true,
+        }}
+      />
+    </h1>
+    <div className="text-2xl mt-6">
+      <p>
+        As an adept computer science student with a robust proficiency in
+        programming and web development, I am actively pursuing a
+        challenging and gratifying opportunity to advance my skills and
+        contribute substantively to a progressive organization. Possessing
+        unwavering confidence in my capacity to rapidly assimilate new
+        concepts and adapt to dynamic environments, I am enthusiastic
+        about embracing fresh challenges and assuming increased
+        responsibilities.
+      </p>
+      <ul className="my-28 ml-6 list-disc [&>li]:mt-2">
+        <li>Major: Computer Science</li>
+        <li>Minor: AI</li>
+        <li>University: Misr International University</li>
+        <li>Proficient in: Python, JavaScript, HTML/CSS, React, Node.js</li>
+        <li>Main stack: Full-Stack</li>
+        <li>Always open to learning new tech :)</li>
+      </ul>
+      <blockquote className="mt-6 border-l-2 pl-6 italic text-xl">
+        "Design and programming are human activities; forget that and all
+        is lost. ~Bjarne Stroustrup"
+      </blockquote>
+    </div>
+  </div>
 
-            <blockquote className="mt-6 border-l-2 pl-6 italic text-xl">
-              "Design and programming are human activities; forget that and all
-              is lost. ~Bjarne Stroustrup"
-            </blockquote>
-          </div>
-        </section>
+  <div className="w-full md:w-1/4 flex justify-center md:justify-end items-start md:absolute md:top-20 md:right-20">
+    <div className="w-60 h-60 rounded-full overflow-hidden border-4 border-slate-300 dark:border-slate-600">
+      <img
+        src="/shehab_grad.jpg"
+        alt="Avatar"
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
 
-        <div className="col-start-5 col-end-7 justify-start items-center relative hidden md:flex">
-          <img
-            src="/shehab_grad.jpg"
-            alt="Logo"
-            className="object-contain rounded-lg shadow-lg"
-            loading="lazy"
-          />
-        </div>
+
+
+
 
         <section id="skill" className="col-span-6 text-center mt-8">
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Skills</h1>
