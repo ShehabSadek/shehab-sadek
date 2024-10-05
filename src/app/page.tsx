@@ -48,7 +48,7 @@ export default function Home(): ReactElement {
         }}
       />
     </h1>
-    <div className="text-2xl mt-6">
+    <div className="text-2xl mt-6" id="about">
       <p>
         As an adept computer science student with a robust proficiency in
         programming and web development, I am actively pursuing a
@@ -87,7 +87,7 @@ export default function Home(): ReactElement {
 </section>
 
 
-        <section id="skill" className="col-span-6 text-center mt-8">
+        <section id="skills" className="col-span-6 text-center mt-8">
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Skills</h1>
           {Object.keys(data.skills).map((category, categoryIndex) => (
             <div

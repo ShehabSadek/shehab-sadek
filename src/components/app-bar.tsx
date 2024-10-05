@@ -89,28 +89,28 @@ export function AppBar() {
       </div>
       <div className="hidden md:flex gap-4">
         <Link
-          href="#"
+          href="#about"
           className="text-3xl font-medium relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black dark:after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
           prefetch={false}
         >
           About Me
         </Link>
         <Link
-          href="#"
+          href="#skills"
           className="text-3xl font-medium relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black dark:after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
           prefetch={false}
         >
           Skills
         </Link>
         <Link
-          href="#"
+          href="#exp"
           className="text-3xl font-medium relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black dark:after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
           prefetch={false}
         >
           Experience
         </Link>
         <Link
-          href="#"
+          href="#contact"
           className="text-3xl font-medium relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black dark:after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
           prefetch={false}
         >
