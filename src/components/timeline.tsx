@@ -29,12 +29,12 @@ import {
             date={exp.date}
             icon={
               <div className="flex justify-center items-center w-full h-full">
-                <img src={exp.icon} alt={exp.title} className="xl:w-11 w-7" />
+                <img src={exp.icon} alt={exp.title} className="xl:w-11 w-11" />
                 
               </div>
             }
             iconStyle={{
-              background: "#6366f1",
+              background: "#64748B",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
