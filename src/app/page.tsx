@@ -75,19 +75,16 @@ export default function Home(): ReactElement {
   </div>
 
   <div className="w-full md:w-1/4 flex justify-center md:justify-end items-start md:absolute md:top-20 md:right-20">
-    <div className="w-60 h-60 rounded-full overflow-hidden border-4 border-slate-300 dark:border-slate-600">
+    <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-slate-300 dark:border-slate-900">
       <img
-        src="/shehab_grad.jpg"
+        src="/me-suit.png"
         alt="Avatar"
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain bg-slate-200 dark:bg-slate-600"
         loading="lazy"
       />
     </div>
   </div>
 </section>
-
-
-
 
 
         <section id="skill" className="col-span-6 text-center mt-8">
