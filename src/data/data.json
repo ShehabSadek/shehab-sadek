@@ -64,22 +64,20 @@
         "subtitle": "ABC Engineering (Cairo EG)",
         "description": [
           "Provided hardware, software, and networking support to staff members.",
-          "Built and maintained a locally deployed internal system for data follow-ups",
-          "Currently working on building their website"
+          "Built and maintining the company website",
+          "Setup NAS server for automated backups"
         ],
-        "date": "Dec. 2023 - Current",
-        "icon": "https://www.ahmedmsabdelhamid.com/assets/abc.webp"
+        "date": "June. 2023 - Sep. 2024",
+        "icon": "/logos/abc.webp"
       },
       {
-        "title": "IT helpdesk dadasddasd",
-        "subtitle": "ABC Engineering (Cairo EG) dadadwdgaw",
+        "title": "Base 24 Developer",
+        "subtitle": "Network International (Cairo EG)",
         "description": [
-          "Provided hardware, software, and networking support to staff members.",
-          "Built and maintained a locally deployed internal system for data follow-ups",
-          "Currently working on building their website"
+          "NDA"
         ],
-        "date": "Dec. 2023 - Nov. 2021",
-        "icon": "https://www.ahmedmsabdelhamid.com/assets/abc.webp"
+        "date": "Sep. 2024 - Current",
+        "icon": "/logos/NetworkLogo.svg"
       }
     ]
   }
