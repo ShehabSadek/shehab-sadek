@@ -113,7 +113,7 @@ export default function Home(): ReactElement {
           ))}
         </section>
         <section id="exp" className="col-span-6 text-center items-center justify-content mt-8">
-          EXPERIENCE (coming soon)
+          EXPERIENCE
           <TimelineComponent/>
         </section>
       </main>

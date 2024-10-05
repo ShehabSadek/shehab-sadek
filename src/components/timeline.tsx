@@ -1,3 +1,4 @@
+"use client"
 import {
     VerticalTimeline,
     VerticalTimelineElement,
@@ -22,6 +23,7 @@ import {
       <VerticalTimeline>
         {data.map((exp) => (
           <VerticalTimelineElement
+            visible={true}
             key={exp.subtitle}
             className="vertical-timeline-element--work"
             contentStyle={{ background: "hsl(233,18%,19%)", color: "#fff" }}
