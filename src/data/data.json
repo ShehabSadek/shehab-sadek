@@ -56,6 +56,9 @@
       "game dev": [
         { "name": "Unity", "image": "/unity" },
         { "name": "PyGame", "image": "/pygame" }
+      ],
+      "no-code":[
+        { "name": "Retool", "image": "/retool" }
       ]
     },
     "experience": [
@@ -80,6 +83,22 @@
         "date": "Sep. 2024 - Current",
         "icon": "/NetworkLogo.svg"
       }
-    ]
+    ],
+    "contact":[
+      {      
+      "title":"shehab.aldeen.sadek",
+      "image": "/gmail",
+      "link":"mailto:shehab.aldeen.sadek"
+      },
+      {
+        "title":"Github",
+        "image": "/github",
+        "link":"https://github.com/ShehabSadek"
+      }
+      ,{
+      "title":"LinkedIn",
+      "image": "/linkedin",
+      "link":"https://www.linkedin.com/in/shehabsadek1"
+    }]
   }
   

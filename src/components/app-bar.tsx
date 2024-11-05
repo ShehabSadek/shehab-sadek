@@ -15,6 +15,7 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+// Hook for scroll position
 export const useScrollPosition = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -35,9 +36,10 @@ export const useScrollPosition = () => {
 
 export function AppBar() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  React.useEffect(() => {
+  // Ensure the component is mounted before setting the theme-dependent logo
+  useEffect(() => {
     setMounted(true);
   }, []);
 
@@ -45,17 +47,12 @@ export function AppBar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  // Ensure Logo is rendered with the correct `src` based on theme
   function Logo(props: React.ComponentProps<typeof Image>) {
-    if (!mounted) {
-      return <Image {...props} src={"/logo.png"} alt="Logo" />;
-    }
-    return (
-      <Image
-        {...props}
-        src={theme === "dark" ? "/logo_white.png" : "/logo.png"}
-        alt="Logo"
-      />
-    );
+    // Fallback src to prevent TypeScript error
+    const logoSrc = mounted ? (theme === "dark" ? "/logo_white.png" : "/logo.png") : "/logo.png";
+    
+    return <Image {...props} src={logoSrc} alt="Logo" priority />;
   }
 
   const loaderProp = ({ src }: { src: any }) => {
@@ -64,7 +61,10 @@ export function AppBar() {
 
   const scrollPosition = useScrollPosition();
 
-  const navbarBackgroundClass = scrollPosition > 0 ? "dark:bg-slate-800 dark:bg-opacity-95 bg-slate-100 bg-opacity-95 py-0 shadow-md" : "bg-transparent";
+  const navbarBackgroundClass = scrollPosition > 0
+    ? "dark:bg-slate-800 dark:bg-opacity-95 bg-slate-100 bg-opacity-95 py-0 shadow-md"
+    : "bg-transparent";
+
   const logoSizeClass = scrollPosition > 0 ? "w-[100px] h-[100px]" : "w-[150px] h-[150px]";
 
   return (
@@ -74,19 +74,18 @@ export function AppBar() {
       <div>
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
           <Logo
-          className={`transition-all duration-300 ${logoSizeClass}`}
+            className={`transition-all duration-300 ${logoSizeClass}`}
             width={"150"}
             height={"150"}
             src={""}
-            alt={""}
-            blurDataURL="data:..."
-            placeholder="blur"
+            alt={"Logo"}
             unoptimized={true}
             loader={loaderProp}
           />
           <h1 className="text-lg font-bold">Shehab Sadek</h1>
         </Link>
       </div>
+
       <div className="hidden md:flex gap-4">
         <Link
           href="#about"
@@ -117,6 +116,8 @@ export function AppBar() {
           Contact
         </Link>
       </div>
+
+      {/* Theme Toggle */}
       <div>
         <TooltipProvider>
           <Tooltip>
@@ -137,6 +138,8 @@ export function AppBar() {
           </Tooltip>
         </TooltipProvider>
       </div>
+
+      {/* Mobile Sheet Menu */}
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden">
@@ -181,6 +184,7 @@ export function AppBar() {
   );
 }
 
+// Menu Icon component
 function MenuIcon(props: React.SVGAttributes<SVGSVGElement>) {
   return (
     <svg
